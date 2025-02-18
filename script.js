@@ -182,3 +182,74 @@ function calcularIMC() {
         classificacao = "Abaixo do peso";
     }
 }
+
+// Função para mostrar números ordenados
+function mostrarNumerosOrdenados(num1, num2, num3) {
+    const numerosOrdenados = [num1, num2, num3].sort((a, b) => a - b);
+    document.getElementById('resultadoOrdenacao').innerText = `Números ordenados: ${numerosOrdenados.join(', ')}`;
+}
+
+// Função para calcular as raízes da equação do segundo grau
+function mostrarRaizes(a, b, c) {
+    const discriminante = b * b - 4 * a * c;
+    let raiz1, raiz2;
+
+    if (discriminante > 0) {
+        raiz1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+        raiz2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+        document.getElementById('resultadoRaizes').innerText = `Raízes: ${raiz1}, ${raiz2}`;
+    } else if (discriminante === 0) {
+        raiz1 = raiz2 = -b / (2 * a);
+        document.getElementById('resultadoRaizes').innerText = `Raiz única: ${raiz1}`;
+    } else {
+        document.getElementById('resultadoRaizes').innerText = "Não há raízes reais.";
+    }
+}
+
+// Função para o jogo de adivinhação
+function jogoDeAdivinhacao() {
+    const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+    let tentativas = 0;
+    let adivinhado = false;
+
+    while (!adivinhado) {
+        const palpite = parseInt(prompt("Adivinhe o número entre 1 e 100:"));
+        tentativas++;
+
+        if (palpite > numeroAleatorio) {
+            alert("Muito alto!");
+        } else if (palpite < numeroAleatorio) {
+            alert("Muito baixo!");
+        } else {
+            adivinhado = true;
+            document.getElementById('resultadoAdivinhacao').innerText = `Você acertou! O número era ${numeroAleatorio}. Tentativas: ${tentativas}`;
+        }
+    }
+}
+
+// Função para conversão de bases
+function converterBase() {
+    const numeroDecimal = parseInt(prompt("Digite um número decimal:"));
+    const base = prompt("Escolha a base (binário ou hexadecimal):").toLowerCase();
+    let resultado;
+
+    if (base === 'binário') {
+        resultado = numeroDecimal.toString(2);
+    } else if (base === 'hexadecimal') {
+        resultado = numeroDecimal.toString(16);
+    } else {
+        resultado = "Base inválida!";
+    }
+
+    document.getElementById('resultadoConversao').innerText = `Resultado da conversão: ${resultado}`;
+}
+
+// Função para calcular juros compostos
+function calcularJurosCompostos() {
+    const capitalInicial = parseFloat(prompt("Digite o capital inicial:"));
+    const taxaJuros = parseFloat(prompt("Digite a taxa de juros mensal (em %):")) / 100;
+    const meses = parseInt(prompt("Digite o número de meses:"));
+
+    const montanteFinal = capitalInicial * Math.pow((1 + taxaJuros), meses);
+    document.getElementById('resultadoJuros').innerText = `Montante final: R$${montanteFinal.toFixed(2)}`;
+}
