@@ -18,8 +18,8 @@ function calcularDivisao() {
 
 // Calcular Resto
 //function calcularResto() {
-   // var resto = 10 % 3;  // Resto de uma divisão
-   // mostrarResultado('resultadoResto', `Resto: ${resto}`);
+// var resto = 10 % 3;  // Resto de uma divisão
+// mostrarResultado('resultadoResto', `Resto: ${resto}`);
 //}
 // impar ou Par
 var num = 20;
@@ -29,12 +29,12 @@ console.log("O número é: " + resto);
 
 function calcularResto() {
     if (num % 2 === 0) {
-       alert ("O numero" + resto + "par");
+        alert("O numero" + resto + "par");
     } else {
-           alert ("O número" + resto + "é impar");
-        }
+        alert("O número" + resto + "é impar");
     }
-  // Saída: 1
+}
+// Saída: 1
 
 
 // Calcular Multiplicação
@@ -72,6 +72,51 @@ function decrementarNumero() {
     var diminuirNumero = numero--; // Decrementa
     mostrarResultado('resultadoDecremento', `Número após decremento: ${diminuirNumero}`); // Saída: 10
 }
+
+
+// Comparações de Igualdade e Desigualdade
+function verificarIgualdade() {
+    var a = 10, b = 10;
+    mostrarResultado('resultadoIgualdade', a == b ? "São iguais" : "Não são iguais");
+}
+
+function verificarDesigualdade() {
+    var x = "texto1", y = "texto2";
+    mostrarResultado('resultadoDesigualdade', x != y ? "São diferentes" : "São iguais");
+}
+
+// Comparações de Maior, Menor, Maior ou Igual, Menor ou Igual
+function verificarMaiorQue() {
+    var idade1 = 25, idade2 = 20;
+    mostrarResultado('resultadoMaiorQue', idade1 > idade2 ? "Idade 1 é maior" : "Idade 1 não é maior");
+}
+
+function verificarMenorQue() {
+    var preco = 50, orcamento = 100;
+    mostrarResultado('resultadoMenorQue', preco < orcamento ? "O preço 1 está dentro do orçamento" : "Fora do orçamento");
+}
+
+function verificarMaiorOuIgual() {
+    var nota = 7;
+    mostrarResultado('resultadoMaiorOuIgual', nota >= 7 ? "Aluno Aprovado nota média 7" : "Reprovado nota média abixo de 7");
+}
+
+function verificarMenorOuIgual() {
+    var estoque = 5, pedido = 10;
+    mostrarResultado('resultadoMenorOuIgual', estoque <= pedido ? "quantidade de produtos aceit, atender pedido" : "Estoque insuficiente");
+}
+
+// Operadores Lógicos AND e OR
+function verificarAND() {
+    var idade = 18, possuiTitulo = true;
+    mostrarResultado('resultadoAND', (idade >= 16 && possuiTitulo) ? "Idade aceita,pode votar" : "Idade Insuficiente, não pode votar");
+}
+
+function verificarOR() {
+    var nota = 8, frequencia = 95;
+    mostrarResultado('resultadoOR', (nota >= 9 || frequencia >= 90) ? "Tem direito a bolsa" : "Não tem direito a bolsa");
+}
+
 //Nível Intermediário
 // Função para mostrar resultados em um elemento HTML
 function mostrarResultado(elementoId, mensagem) {
